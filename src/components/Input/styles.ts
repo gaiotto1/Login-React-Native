@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   width: 100%;
-  padding-bottom: 25px;
+  padding-bottom: 10px;
 `;
 
 export const Label = styled.Text`
@@ -27,5 +27,6 @@ export const TextInput = styled.TextInput`
   height: 53px;
   font-size: 11px;
   line-height: 50px;
-  color: #383e71;
+  color: #989fdb;
+  letter-spacing: 0.5px;
 `;

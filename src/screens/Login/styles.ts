@@ -1,27 +1,28 @@
 import styled from 'styled-components/native';
+import {Dimensions} from 'react-native';
+const window = Dimensions.get('window');
 
 export const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: #333;
+  background-color: ${window.width >= 500 ? '#faf5ff' : '#130525'};
 `;
 
 export const ContainerBackground = styled.View`
   position: absolute;
   top: 0;
   left: 0;
-  width: 40%;
-  height: 100%;
+  width: ${window.width >= 500 ? '40%' : '100%'};
+  height: ${window.width >= 500 ? '100%' : '60%'};
 `;
 
 export const ContainerForm = styled.View`
-  width: 100%;
+  width: ${window.width >= 500 ? '60%' : '100%'};
   margin-left: auto;
   justify-content: center;
   align-items: center;
-  padding-top: 82px;
-  background-color: red;
+  padding-top: ${window.width >= 500 ? '0px' : '82px'};
 `;
 
 export const Form = styled.View`
@@ -29,14 +30,14 @@ export const Form = styled.View`
   background-color: #faf5ff;
   justify-content: center;
   align-items: center;
-  padding: 30px 30px;
+  padding: 28px 30px 45px 30px;
   border-radius: 10px;
 `;
 
 export const Title = styled.Text`
   width: 100%;
-  max-width: 139px;
-  text-align: center;
+  max-width: ${window.width >= 500 ? '100%' : '139px'};
+  text-align: ${window.width >= 500 ? 'left' : 'center'};
   font-size: 24px;
   line-height: 32px;
   color: #383e71;
@@ -46,7 +47,7 @@ export const Title = styled.Text`
 
 export const SubTitle = styled.Text`
   width: 100%;
-  text-align: center;
+  text-align: ${window.width >= 500 ? 'left' : 'center'};
   font-size: 14px;
   line-height: 20px;
   color: #989fdb;
@@ -64,7 +65,7 @@ export const ForgotPasswordText = styled.Text`
   max-width: 240px;
   margin: auto;
   font-size: 15px;
-  color: #fff;
+  color: ${window.width >= 500 ? '#989FDB' : '#fff'};
   line-height: 22px;
   text-align: center;
   font-family: 'Montserrat-Regular';
