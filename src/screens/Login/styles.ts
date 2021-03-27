@@ -20,7 +20,8 @@ export const ContainerForm = styled.View`
   margin-left: auto;
   justify-content: center;
   align-items: center;
-  margin-top: 82px;
+  padding-top: 82px;
+  background-color: red;
 `;
 
 export const Form = styled.View`
