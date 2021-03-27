@@ -13,6 +13,9 @@ import {
   Form,
   Title,
   SubTitle,
+  ForgotPassword,
+  ForgotPasswordText,
+  Link,
 } from './styles';
 
 const Login: React.FC = () => {
@@ -43,6 +46,11 @@ const Login: React.FC = () => {
             ENTRAR
           </Button>
         </Form>
+        <ForgotPassword>
+          <ForgotPasswordText>
+            Esqueceu seu login ou senha ? Clique <Link>aqui</Link>
+          </ForgotPasswordText>
+        </ForgotPassword>
       </ContainerForm>
     </Container>
   );
