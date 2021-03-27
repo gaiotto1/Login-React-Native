@@ -17,4 +17,36 @@ export const ContainerForm = styled.View`
   height: 100%;
   margin-left: auto;
   background-color: silver;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Form = styled.View`
+  width: 90%;
+  background-color: #faf5ff;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 30px;
+  border-radius: 10px;
+`;
+
+export const Title = styled.Text`
+  width: 100%;
+  max-width: 139px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 32px;
+  color: #383e71;
+  margin-bottom: 12px;
+  font-family: 'Montserrat-Regular';
+`;
+
+export const SubTitle = styled.Text`
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  color: #989fdb;
+  margin: 10px 0px 16px 0px;
+  font-family: 'Montserrat-SemiBold';
 `;

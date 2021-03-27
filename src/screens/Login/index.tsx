@@ -1,9 +1,19 @@
 import React from 'react';
-import {Text, ImageBackground} from 'react-native';
-
-import {Container, ContainerBackground, ContainerForm} from './styles';
+import {ImageBackground} from 'react-native';
 
 import backgroundImage from '../../images/fundo.png';
+
+import Input from '../../components/Input';
+import Button from '../../components/Button';
+
+import {
+  Container,
+  ContainerBackground,
+  ContainerForm,
+  Form,
+  Title,
+  SubTitle,
+} from './styles';
 
 const Login: React.FC = () => {
   return (
@@ -19,7 +29,20 @@ const Login: React.FC = () => {
         />
       </ContainerBackground>
       <ContainerForm>
-        <Text>formulario</Text>
+        <Form>
+          <Title>Olá, seja bem-vindo!</Title>
+          <SubTitle>Para acessar a plataforma, faça seu login.</SubTitle>
+
+          <Input name="E-MAIL" />
+          <Input name="SENHA" />
+
+          <Button
+            onPress={() => {
+              console.log('ok');
+            }}>
+            ENTRAR
+          </Button>
+        </Form>
       </ContainerForm>
     </Container>
   );
