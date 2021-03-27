@@ -1,12 +1,26 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Text, ImageBackground} from 'react-native';
 
-import {Container} from './styles';
+import {Container, ContainerBackground, ContainerForm} from './styles';
+
+import backgroundImage from '../../images/fundo.png';
 
 const Login: React.FC = () => {
   return (
     <Container>
-      <Text>Login</Text>
+      <ContainerBackground>
+        <ImageBackground
+          source={backgroundImage}
+          style={{
+            flex: 1,
+            resizeMode: 'contain',
+            justifyContent: 'center',
+          }}
+        />
+      </ContainerBackground>
+      <ContainerForm>
+        <Text>formulario</Text>
+      </ContainerForm>
     </Container>
   );
 };
