@@ -1,5 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ImageBackground, KeyboardAvoidingView, ScrollView} from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
+
+import * as UsersActions from '../../store/ducks/users/actions';
+import {ApplicationState} from '../../store';
+import {flashMessage} from '../../utils/index';
 
 import backgroundImage from '../../images/fundo.png';
 
@@ -19,6 +24,36 @@ import {
 } from './styles';
 
 const Login: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const usersData = useSelector((state: ApplicationState) => state.users.data);
+  const dispatch = useDispatch();
+
+  const loginValidate = () => {
+    loadUsersData();
+
+    const login: any = usersData.find(element => element.email == email);
+    const pass: any = usersData.find(element => element.password == password);
+
+    if (login && pass) {
+      flashMessage('Wiser app', 'Bem vindo', 'success');
+    } else {
+      flashMessage('Falha ao logar', 'E-mail ou senha incorreto(s).', 'danger');
+    }
+  };
+
+  const loadUsersData = async () => {
+    try {
+      await dispatch(UsersActions.loadRequest());
+    } catch (error) {
+      flashMessage('Falha ao logar', error, 'danger');
+    }
+  };
+
+  const confirm = () => {
+    loginValidate();
+  };
+
   return (
     <KeyboardAvoidingView style={{flex: 1}}>
       <ScrollView
@@ -36,12 +71,20 @@ const Login: React.FC = () => {
               <Title>Olá, seja bem-vindo!</Title>
               <SubTitle>Para acessar a plataforma, faça seu login.</SubTitle>
 
-              <Input name="E-MAIL" />
-              <Input name="SENHA" />
+              <Input
+                name="E-MAIL"
+                value={email}
+                onChangeText={email => setEmail(email)}
+              />
+              <Input
+                name="SENHA"
+                value={password}
+                onChangeText={password => setPassword(password)}
+              />
 
               <Button
                 onPress={() => {
-                  console.log('ok');
+                  confirm();
                 }}>
                 ENTRAR
               </Button>

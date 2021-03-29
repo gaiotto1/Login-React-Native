@@ -25,8 +25,6 @@ export const TextInput = styled.TextInput`
   font-family: 'Montserrat Regular';
   width: 100%;
   height: 53px;
-  font-size: 11px;
-  line-height: 50px;
+  font-size: 13px;
   color: #989fdb;
-  letter-spacing: 0.5px;
 `;
