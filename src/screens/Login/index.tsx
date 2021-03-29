@@ -31,14 +31,21 @@ const Login: React.FC = () => {
 
   const loginValidate = () => {
     loadUsersData();
+    if (email !== '' && password !== '') {
+      const login: any = usersData.find(element => element.email == email);
+      const pass: any = usersData.find(element => element.password == password);
 
-    const login: any = usersData.find(element => element.email == email);
-    const pass: any = usersData.find(element => element.password == password);
-
-    if (login && pass) {
-      flashMessage('Wiser app', 'Bem vindo', 'success');
+      if (login && pass) {
+        flashMessage('Wiser app', 'Bem vindo', 'success');
+      } else {
+        flashMessage(
+          'Falha ao logar',
+          'E-mail ou senha incorreto(s).',
+          'danger',
+        );
+      }
     } else {
-      flashMessage('Falha ao logar', 'E-mail ou senha incorreto(s).', 'danger');
+      flashMessage('Aviso', 'Preencha os campos e-mail e senha.', 'warning');
     }
   };
 
@@ -80,6 +87,7 @@ const Login: React.FC = () => {
                 name="SENHA"
                 value={password}
                 onChangeText={password => setPassword(password)}
+                secureTextEntry
               />
 
               <Button
