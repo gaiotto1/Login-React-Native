@@ -1,5 +1,5 @@
 # Login - React Native
-> [WIP] Project build in Typescript, React Native, Styled Components, hooks, redux, redux-saga e axios.
+> [WIP] Project build in Typescript, React Native, Styled Components, hooks, redux, redux-saga and axios.
 
 > [WIP] Projeto desenvolvido com Typescript, React Native, Styled Components, hooks, redux, redux-saga e axios.
 
@@ -16,6 +16,12 @@
 yarn android
 yarn ios
 ```
+
+## Usage example
+
+To test the login, use the following user credentials:
+E-mail: julio@gmail.com
+Password: 123
 
 ## Release History
 
